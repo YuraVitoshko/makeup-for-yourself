@@ -28,35 +28,37 @@
   }
 })();
 document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector(".contacts__form");
-  const inputs = form.querySelectorAll("input");
-  form.addEventListener("submit", function(e) {
-    let hasError = false;
-    inputs.forEach((input) => {
-      const line = input.closest(".form__line");
-      const validMsg = line.parentElement.querySelector(".form__valid");
-      line.classList.remove("error", "success");
-      validMsg.style.display = "none";
-      if (input.value.trim() === "") {
-        line.classList.add("error");
-        validMsg.style.display = "block";
-        hasError = true;
-        return;
-      }
-      if (input.type === "email") {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(input.value.trim())) {
+  const forms = document.querySelectorAll(".contacts__form");
+  forms.forEach((form) => {
+    const inputs = form.querySelectorAll("input");
+    form.addEventListener("submit", function(e) {
+      let hasError = false;
+      inputs.forEach((input) => {
+        const line = input.closest(".form__line");
+        const validMsg = line.parentElement.querySelector(".form__valid");
+        line.classList.remove("error", "success");
+        validMsg.style.display = "none";
+        if (input.value.trim() === "") {
           line.classList.add("error");
           validMsg.style.display = "block";
           hasError = true;
           return;
         }
+        if (input.type === "email") {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(input.value.trim())) {
+            line.classList.add("error");
+            validMsg.style.display = "block";
+            hasError = true;
+            return;
+          }
+        }
+        line.classList.add("success");
+      });
+      if (hasError) {
+        e.preventDefault();
       }
-      line.classList.add("success");
     });
-    if (hasError) {
-      e.preventDefault();
-    }
   });
 });
 document.addEventListener("DOMContentLoaded", () => {

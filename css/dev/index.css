@@ -24,7 +24,7 @@ body::after {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 5rem 1.25rem;
+  padding: 5rem 0;
   transition: visibility 0.8s ease 0s;
   visibility: hidden;
   pointer-events: none;
@@ -54,12 +54,12 @@ body::after {
 }
 
 [data-fls-popup-body] {
+  display: grid;
   visibility: hidden;
   transform: scale(0);
   transition: transform 0.3s ease 0s, visibility 0.3s ease 0s;
-  padding: 1.25rem;
   width: 100%;
-  max-width: 56.25rem;
+  max-width: 30rem;
   border-radius: 1.25rem;
 }
 
@@ -68,9 +68,12 @@ body::after {
   aspect-ratio: 16/9;
 }
 
+[data-fls-popup-content] {
+  margin-top: -2.0625rem;
+}
+
 .popup__btn {
-  display: flex;
-  justify-content: flex-end;
+  justify-self: end;
   max-width: 27.5rem;
-  margin: 0 auto -2.0625rem;
+  padding-right: 1.25rem;
 }
