@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   video.playsInline = true;
   video.controls = false;
   btnPause.style.display = "none";
-  controls.classList.add("hidden");
+  controls.classList.remove("hidden");
   function syncButtons() {
     if (video.paused) {
       btnPlay.style.display = "block";
