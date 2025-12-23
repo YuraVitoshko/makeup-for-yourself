@@ -110,16 +110,19 @@ document.addEventListener("DOMContentLoaded", () => {
     video.play().catch(() => {
     });
     syncButtons();
+    showControls();
   });
   btnPause.addEventListener("click", () => {
     video.pause();
     syncButtons();
+    showControls();
   });
   video.addEventListener("play", syncButtons);
   video.addEventListener("pause", syncButtons);
   btnMute.addEventListener("click", () => {
     video.muted = !video.muted;
     btnMute.innerHTML = video.muted ? '<img src="assets/img/icons/sound-off.svg" alt="Mute">' : '<img src="assets/img/icons/sound-on.svg" alt="Sound">';
+    showControls();
   });
   btnFull.addEventListener("click", () => {
     if (video.webkitEnterFullscreen) {
@@ -127,12 +130,13 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (video.requestFullscreen) {
       video.requestFullscreen();
     }
+    showControls();
   });
   function showControls() {
     controls.classList.remove("hidden");
     clearTimeout(hideTimer);
     hideTimer = setTimeout(() => {
-      controls.classList.add("hidden");
+      if (!video.paused) controls.classList.add("hidden");
     }, 2500);
   }
   video.addEventListener("touchstart", () => {
