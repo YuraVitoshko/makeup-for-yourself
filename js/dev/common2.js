@@ -145,3 +145,59 @@ document.addEventListener("DOMContentLoaded", () => {
     showControls();
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const photos = document.querySelectorAll(".review-slide__photo img");
+  const gallery = document.getElementById("customGallery");
+  const galleryImg = gallery.querySelector(".custom-gallery__img");
+  const btnClose = gallery.querySelector(".custom-gallery__close");
+  const btnPrev = gallery.querySelector(".custom-gallery__arrow--prev");
+  const btnNext = gallery.querySelector(".custom-gallery__arrow--next");
+  let currentIndex = 0;
+  let images = [];
+  photos.forEach((img, i) => {
+    images.push(img.src);
+    img.addEventListener("click", () => openGallery(i));
+  });
+  function showImage(src) {
+    galleryImg.classList.remove("show");
+    setTimeout(() => {
+      galleryImg.src = src;
+      galleryImg.onload = () => {
+        galleryImg.classList.add("show");
+      };
+    }, 150);
+  }
+  function openGallery(index) {
+    currentIndex = index;
+    showImage(images[currentIndex]);
+    gallery.classList.add("active");
+  }
+  function closeGallery() {
+    gallery.classList.remove("active");
+  }
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(images[currentIndex]);
+  }
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(images[currentIndex]);
+  }
+  btnClose.addEventListener("click", closeGallery);
+  btnNext.addEventListener("click", nextImage);
+  btnPrev.addEventListener("click", prevImage);
+  gallery.addEventListener("click", (e) => {
+    if (e.target.classList.contains("custom-gallery__overlay")) closeGallery();
+  });
+  let startX = 0;
+  gallery.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+  gallery.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let diff = endX - startX;
+    if (Math.abs(diff) > 50) {
+      diff < 0 ? nextImage() : prevImage();
+    }
+  });
+});
