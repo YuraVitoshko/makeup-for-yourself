@@ -553,10 +553,6 @@ body {
   object-fit: contain;
 }
 
-.testmonials {
-  padding-top: 7.5rem;
-}
-
 .guarante {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -792,6 +788,9 @@ input[type=tel] {
   color: #525A70;
 }
 
+.testmonials {
+  padding-top: 7.5rem;
+}
 .testmonials__title:not(:last-child) {
   margin-bottom: 2rem;
 }
@@ -826,6 +825,9 @@ input[type=tel] {
   border-radius: 1.25rem;
   padding: 1.25rem;
   background-color: #fff;
+}
+.review-slide__testimonial:not(:last-child) {
+  margin-bottom: 2rem;
 }
 .review-slide__stars {
   display: flex;
