@@ -108,6 +108,11 @@ body::after {
   margin-top: -2.0625rem;
 }
 
+[data-fls-popup-close] {
+  outline: none;
+  border: none;
+}
+
 .popup__btn {
   justify-self: end;
   max-width: 27.5rem;

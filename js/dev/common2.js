@@ -28,6 +28,16 @@
   }
 })();
 document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.querySelector(".page-fixed-btn");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1e3) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
   const forms = document.querySelectorAll(".contacts__form");
   forms.forEach((form) => {
     const inputs = form.querySelectorAll("input");
