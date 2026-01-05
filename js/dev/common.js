@@ -93,21 +93,6 @@ let bodyUnlock = (delay = 500) => {
     }, delay);
   }
 };
-let bodyLock = (delay = 500) => {
-  if (bodyLockStatus) {
-    const lockPaddingElements = document.querySelectorAll("[data-fls-lp]");
-    const lockPaddingValue = window.innerWidth - document.body.offsetWidth + "px";
-    lockPaddingElements.forEach((lockPaddingElement) => {
-      lockPaddingElement.style.paddingRight = lockPaddingValue;
-    });
-    document.body.style.paddingRight = lockPaddingValue;
-    document.documentElement.setAttribute("data-fls-scrolllock", "");
-    bodyLockStatus = false;
-    setTimeout(function() {
-      bodyLockStatus = true;
-    }, delay);
-  }
-};
 function dataMediaQueries(array, dataSetValue) {
   const media = Array.from(array).filter((item) => item.dataset[dataSetValue]).map((item) => {
     const [value, type = "max"] = item.dataset[dataSetValue].split(",");
@@ -158,11 +143,9 @@ const gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) =>
 };
 export {
   slideUp as a,
-  bodyLock as b,
-  bodyUnlock as c,
+  bodyUnlock as b,
+  getHash as c,
   dataMediaQueries as d,
-  bodyLockStatus as e,
-  getHash as f,
   gotoBlock as g,
   slideToggle as s
 };

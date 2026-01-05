@@ -5,11 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1767622180213"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min2.js?v=1767622180213">
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1767622180213">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1767622180213">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1767622180213">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1767628319392"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min2.js?v=1767628319392">
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1767628319392">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1767628319392">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1767628319392">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -25,9 +25,10 @@
 				</div>
 			</header>
 			<main class="page">
+				<!-- <script type="module" src="@components/layout/popup/popup.js?v=1767628319392"></script> -->
 				<div data-fls-index="" class="index">
 					<main class="page">
-						<div data-fls-popup-link="popup" class="page-fixed-btn button">
+						<div class="page-fixed-btn button btn-popup">
 							Придбати курс
 							<span>−79%</span>
 						</div>
@@ -47,7 +48,7 @@
 									<div class="hero__image">
 										<img class="hero__img" src="./assets/img/img_hero.png" alt="Image">
 										<div class="hero__box-pos">
-											<div data-fls-popup-link="popup" class="hero__button button">
+											<div class="hero__button button btn-popup">
 												Придбати курс
 												<span>−79%</span>
 											</div>
@@ -729,62 +730,100 @@ fill="white" />
 						</section>
 					</main>
 				</div>
-				<div data-fls-popup="popup" aria-hidden="true" class="popup">
-					<div data-fls-popup-wrapper="" class="popup__wrapper">
-						<div data-fls-popup-body="" class="popup__body">
-							<div class="popup__btn">
-								<button data-fls-popup-close="" type="button" class="popup__close">
-									<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.366117 0.366117C0.854272 -0.122039 1.64573 -0.122039 2.13388 0.366117L11.25 9.48223L20.3661 0.366118C20.8543 -0.122038 21.6457 -0.122037 22.1339 0.366118C22.622 0.854273 22.622 1.64573 22.1339 2.13388L13.0178 11.25L22.1339 20.3661C22.622 20.8543 22.622 21.6457 22.1339 22.1339C21.6457 22.622 20.8543 22.622 20.3661 22.1339L11.25 13.0178L2.13388 22.1339C1.64573 22.622 0.854272 22.622 0.366117 22.1339C-0.122039 21.6457 -0.122039 20.8543 0.366117 20.3661L9.48223 11.25L0.366117 2.13388C-0.122039 1.64573 -0.122039 0.854272 0.366117 0.366117Z" fill="white"></path>
-									</svg>
-								</button>
-							</div>
-							<div data-fls-popup-content="" class="popup__box">
-								<div class="contacts">
-									<div class="contacts__container">
-										<div class="contacts__body">
-											<h3 class="contacts__title">Приєднуйтесь до Курсу за спеціальною ціною</h3>
-											<div class="contacts__prices prices-contacts">
-												<div class="prices-contacts__new-price">649 грн</div>
-												<div class="prices-contacts__old-price">2190 грн</div>
+				<!-- <include src="@components/layout/popup/popup.html" locals='{}'></include> -->
+				<div class="popup">
+					<div class="popup__btn">
+						<button type="button" class="popup__close" aria-label="Закрити попап">
+							<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.366117 0.366117C0.854272 -0.122039 1.64573 -0.122039 2.13388 0.366117L11.25 9.48223L20.3661 0.366118C20.8543 -0.122038 21.6457 -0.122037 22.1339 0.366118C22.622 0.854273 22.622 1.64573 22.1339 2.13388L13.0178 11.25L22.1339 20.3661C22.622 20.8543 22.622 21.6457 22.1339 22.1339C21.6457 22.622 20.8543 22.622 20.3661 22.1339L11.25 13.0178L2.13388 22.1339C1.64573 22.622 0.854272 22.622 0.366117 22.1339C-0.122039 21.6457 -0.122039 20.8543 0.366117 20.3661L9.48223 11.25L0.366117 2.13388C-0.122039 1.64573 -0.122039 0.854272 0.366117 0.366117Z" fill="white"></path>
+							</svg>
+						</button>
+					</div>
+					<div class="popup__wrapper">
+						<div class="contacts">
+							<div class="contacts__container">
+								<div class="contacts__body">
+									<h3 class="contacts__title">Приєднуйтесь до Курсу за спеціальною ціною</h3>
+									<div class="contacts__prices prices-contacts">
+										<div class="prices-contacts__new-price">649 грн</div>
+										<div class="prices-contacts__old-price">2190 грн</div>
+									</div>
+									<div class="contacts__text">
+										Одразу після оплати ти отримаєш посилання до Telegram-бота з подальшою
+						інструкцією.
+									</div>
+								</div>
+								<form class="contacts__form form">
+									<div class="form__lines">
+										<div class="form__box">
+											<div class="form__line">
+												<input id="name" type="text" name="name" placeholder="Ім'я" class="form__input input">
 											</div>
-											<div class="contacts__text">
-												Одразу після оплати ти отримаєш посилання до Telegram-бота з подальшою інструкцією.
-											</div>
+											<span class="form__valid">Обов’язкове поле</span>
 										</div>
-										<form class="contacts__form form">
-											<div class="form__lines">
-												<div class="form__box">
-													<div class="form__line">
-														<input id="name" type="text" name="name" placeholder="Ім'я" class="form__input input">
-													</div>
-													<span class="form__valid">Обов’язкове поле</span>
-												</div>
-												<div class="form__box">
-													<div class="form__line">
-														<input id="mail" type="email" name="mail" placeholder="Електронна пошта" class="form__input input">
-													</div>
-													<span class="form__valid">Обов’язкове поле</span>
-												</div>
+										<div class="form__box">
+											<div class="form__line">
+												<input id="mail" type="email" name="mail" placeholder="Електронна пошта" class="form__input input">
 											</div>
-											<button type="submit" class="form__button button">
-												Перейти ло оплати
-												<span>−79%</span>
-											</button>
-										</form>
-										<div class="contacts__timer timer">
-											<div class="timer__subtitle">До закінчення акції залишилось:</div>
-											<div class="timer__wrapper">
-												<div class="timer__hours"></div>
-												<div class="timer__minutes"></div>
-												<div class="timer__seconds"></div>
-											</div>
+											<span class="form__valid">Обов’язкове поле</span>
 										</div>
+									</div>
+									<button type="submit" class="form__button button">
+										Перейти ло оплати
+										<span>−79%</span>
+									</button>
+								</form>
+								<div class="contacts__timer timer">
+									<div class="timer__subtitle">До закінчення акції залишилось:</div>
+									<div class="timer__wrapper">
+										<div class="timer__hours"></div>
+										<div class="timer__minutes"></div>
+										<div class="timer__seconds"></div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!--
+<div class="join-course__body join popup__wrapper">
+<div class="join__tags">
+<div class="join__tag start-date"><span><img src="@img/icons/clock.svg" alt="Icon"></span> Старт 15 жовтня
+</div>
+<div class="join__border-tag">Залишилось 4 місця</div>
+</div>
+<h3 class="join__title">Приєднуйтесь до Курсу стилю <br> <span>за спеціальною ціною</span></h3>
+<div class="join__prices">
+<div class="join__price">449 грн</div>
+<div class="join__old-price">2190 грн</div>
+</div>
+<form class="join__form form">
+<div class="form__line">
+<input autocomplete="off" type="text" placeholder="Ім’я" class="form__input input">
+</div>
+<div class="form__line">
+<input autocomplete="off" type="email" placeholder="Електронна пошта" class="form__input input">
+</div>
+<div class="form__btn">
+<a href="#" class="form__button button">Перейти до оплати <span>-79%</span></a>
+</div>
+</form>
+<ul class="join__list">
+<li class="join__item">
+<img src="@img/icons/lock.svg" alt="Icon">
+<div class="join__item-box">Усі дані конфіденційні й потрібні лише для надання доступу</div>
+</li>
+<li class="join__item">
+<img src="@img/icons/copy.svg" alt="Icon">
+<div class="join__item-box">Одразу після оплати ти отримаєш <span>посилання до Telegram-бота</span> з
+подальшою інструкцією.</div>
+</li>
+<li class="join__item join__item--center">
+<div class="join__item-box">P.S. Ви нічим не ризикуєте! <span>Гарантія повернення коштів — 14
+днів</span>, якщо курс вам не підійде.</div>
+</li>
+</ul>
+</div>
+-->
 				</div>
 			</main>
 			<footer data-fls-footer="" class="footer">
@@ -800,13 +839,13 @@ fill="white" />
 					</ul>
 					<div class="footer__socials socials-footer">
 						<div class="socials-footer__item">
-							<a href="#" class="socials-footer__link">
+							<a href="https://www.instagram.com/ebc.warszawa?igsh=b3JnODg2NnNjMWM0" target="_blank" class="socials-footer__link">
 								<img src="./assets/img/icons/instagram.svg" alt="Instagram">
 								Instagram
 							</a>
 						</div>
 						<div class="socials-footer__item">
-							<a href="#" class="socials-footer__link">
+							<a href="https://t.me/Educational_Beauty_Center" target="_blank" class="socials-footer__link">
 								<img src="./assets/img/icons/telegram.svg" alt="Telegram">
 								Telegram
 							</a>

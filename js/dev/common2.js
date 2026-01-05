@@ -211,3 +211,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.querySelector(".popup");
+  const openBtns = document.querySelectorAll(".btn-popup");
+  const closeBtn = document.querySelector(".popup__close");
+  if (!popup) return;
+  function openPopup() {
+    popup.classList.add("active");
+    document.body.classList.add("popup-open");
+  }
+  function closePopup() {
+    popup.classList.remove("active");
+    document.body.classList.remove("popup-open");
+  }
+  openBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openPopup();
+    });
+  });
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closePopup);
+  }
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && popup.classList.contains("active")) {
+      closePopup();
+    }
+  });
+});
