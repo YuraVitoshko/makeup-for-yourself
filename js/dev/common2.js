@@ -225,21 +225,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("popup-open");
   }
   openBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("touchstart", (e) => {
       e.preventDefault();
       openPopup();
     });
   });
   if (closeBtn) {
-    closeBtn.addEventListener("click", closePopup);
-  }
-  popup.addEventListener("click", (e) => {
-    if (e.target === popup) {
+    closeBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      closeBtn.blur();
       closePopup();
-    }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && popup.classList.contains("active")) {
+    });
+  }
+  popup.addEventListener("touchstart", (e) => {
+    if (e.target === popup) {
       closePopup();
     }
   });

@@ -1243,12 +1243,18 @@ input[type=tel] {
   transition: all 0.4s ease;
 }
 .popup__close {
+  outline: none;
   background: transparent;
   border: none;
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
   z-index: 10001;
+}
+
+.popup__close:focus,
+.popup__close:active {
+  outline: none;
 }
 
 body.popup-open {
