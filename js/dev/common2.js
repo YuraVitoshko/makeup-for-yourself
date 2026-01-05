@@ -225,19 +225,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("popup-open");
   }
   openBtns.forEach((btn) => {
-    btn.addEventListener("touchstart", (e) => {
+    btn.addEventListener("pointerdown", (e) => {
       e.preventDefault();
       openPopup();
     });
   });
   if (closeBtn) {
-    closeBtn.addEventListener("touchstart", (e) => {
+    closeBtn.addEventListener("pointerdown", (e) => {
       e.preventDefault();
       closeBtn.blur();
       closePopup();
     });
   }
-  popup.addEventListener("touchstart", (e) => {
+  popup.addEventListener("pointerdown", (e) => {
     if (e.target === popup) {
       closePopup();
     }
