@@ -5,14 +5,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1766568111220"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min2.js?v=1766568111220">
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1766568111220">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1766568111220">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1766568111220">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1767621788030"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min2.js?v=1767621788030">
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1767621788030">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1767621788030">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1767621788030">
 	</head>
 	<body>
 		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container">
+					<ul class="header__row">
+						<li class="header__item">Старт: одразу після оплати</li>
+						<li class="header__item">
+							<img src="./assets/img/icons/star.svg" alt="Icon">
+						</li>
+						<li class="header__item">Формат: Онлайн</li>
+					</ul>
+				</div>
+			</header>
 			<main class="page">
 				<div data-fls-index="" class="index">
 					<main class="page">
@@ -22,13 +33,6 @@
 						</div>
 						<section class="hero">
 							<div class="hero__container">
-								<ul class="hero__top">
-									<li class="hero__item">Старт: одразу після оплати</li>
-									<li class="hero__item">
-										<img src="./assets/img/icons/star.svg" alt="Icon">
-									</li>
-									<li class="hero__item">Формат: Онлайн</li>
-								</ul>
 								<div class="hero__body">
 									<h1 class="hero__title">
 										Онлайн курс
@@ -124,7 +128,7 @@
 									</p>
 								</div>
 								<div class="author__btn">
-									<a href="#" class="author__button button-border">Програма курсу</a>
+									<a href="#" data-fls-scrollto=".program__container" data-fls-scrollto-top="40" class="author__button button-border">Програма курсу</a>
 								</div>
 								<div class="author__images">
 									<div class="author__img">
@@ -151,6 +155,16 @@
 								</div>
 							</div>
 							<div class="preview__container">
+								<!--
+<div class="preview__wrapper-media">
+<div class="preview__media">
+<iframe src="https://www.youtube.com/embed/t2vKo62g5ss?si=a7tvSUVFjhvvOzM5" title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+-->
 								<div class="preview__video video">
 									<video id="video-player" poster="./assets/img/video-poster.png" class="video__item" controlslist="nodownload" loop playsinline="" preload="metadata">
 										<source src="./assets/video/hero-video.mp4" type="video/mp4">
@@ -271,7 +285,7 @@
 									</div>
 								</div>
 								<div class="after-course__bottom">
-									<div class="after-course__button">Придбати курс</div>
+									<div data-fls-scrollto=".contacts__body" data-fls-scrollto-top="40" class="after-course__button">Придбати курс</div>
 									<div class="after-course__guide guide">
 										<div class="guide__icon">
 											<img src="./assets/img/icons/gift.svg" alt="icon">
@@ -321,23 +335,23 @@
 										<div class="difference__block block-difference">
 											<h3 class="block-difference__title">Курси інших</h3>
 											<ul class="block-difference__list">
-												<li class="block-difference__item">
+												<li class="block-difference__item block-difference__item--border">
 													<img src="./assets/img/icons/red-close.svg" alt="Icon">
 													Теорія без практики, яку важко застосувати
 												</li>
-												<li class="block-difference__item">
+												<li class="block-difference__item block-difference__item--border">
 													<img src="./assets/img/icons/red-close.svg" alt="Icon">
 													Поверхневі поради з Pinterest без системи
 												</li>
-												<li class="block-difference__item">
+												<li class="block-difference__item block-difference__item--border">
 													<img src="./assets/img/icons/red-close.svg" alt="Icon">
 													Заплутані терміни й відсутність конкретики
 												</li>
-												<li class="block-difference__item">
+												<li class="block-difference__item block-difference__item--border">
 													<img src="./assets/img/icons/red-close.svg" alt="Icon">
 													Погана якість матеріалів — не зрозуміло, що робити
 												</li>
-												<li class="block-difference__item">
+												<li class="block-difference__item block-difference__item--border">
 													<img src="./assets/img/icons/red-close.svg" alt="Icon">
 													Орієнтація тільки на тренди, які швидко втрачають актуальність
 												</li>
@@ -541,7 +555,11 @@ fill="white" />
 							</div>
 							<div class="custom-gallery" id="customGallery">
 								<div class="custom-gallery__overlay"></div>
-								<button class="custom-gallery__close">×</button>
+								<button class="custom-gallery__close">
+									<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.366117 0.366117C0.854272 -0.122039 1.64573 -0.122039 2.13388 0.366117L11.25 9.48223L20.3661 0.366118C20.8543 -0.122038 21.6457 -0.122037 22.1339 0.366118C22.622 0.854273 22.622 1.64573 22.1339 2.13388L13.0178 11.25L22.1339 20.3661C22.622 20.8543 22.622 21.6457 22.1339 22.1339C21.6457 22.622 20.8543 22.622 20.3661 22.1339L11.25 13.0178L2.13388 22.1339C1.64573 22.622 0.854272 22.622 0.366117 22.1339C-0.122039 21.6457 -0.122039 20.8543 0.366117 20.3661L9.48223 11.25L0.366117 2.13388C-0.122039 1.64573 -0.122039 0.854272 0.366117 0.366117Z" fill="white"></path>
+									</svg>
+								</button>
 								<div class="custom-gallery__inner">
 									<!-- <img class="custom-gallery__img" src="" alt=""> -->
 									<img class="custom-gallery__img" src="./assets/img/testmonials/result-1.png" alt="Image">
@@ -618,7 +636,9 @@ fill="white" />
 										<div class="guarante__subtitle">Я впевнена на 100% у користі цього курсу</div>
 									</div>
 									<div class="guarante__text">
-										Якщо протягом 14 днів після оплати ти відчуєш, що він не дав тобі користі — просто напиши мені і я поверну
+										Якщо протягом
+										<span>14 днів після оплати</span>
+										ти відчуєш, що він не дав тобі користі — просто напиши мені і я поверну
 						повну
 						вартість без зайвих запитань.
 									</div>
@@ -772,7 +792,7 @@ fill="white" />
 					<div class="footer__fop">ФОП Цимбалюк Олександра Олександрівна</div>
 					<ul class="footer__list">
 						<div class="footer__item">
-							<a href="#" class="footer__link">Договір оферти</a>
+							<a href="oferta.html" class="footer__link">Договір оферти</a>
 						</div>
 						<div class="footer__item">
 							<a href="privacy.html" class="footer__link">Політика конфіденційності</a>
