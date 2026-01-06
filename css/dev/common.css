@@ -1512,7 +1512,6 @@ input[type=tel] {
   pointer-events: none;
   transform: translateY(0.625rem);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-  border-radius: 1.25rem;
 }
 .popup__btn {
   position: relative;
@@ -1528,6 +1527,7 @@ input[type=tel] {
   visibility: visible;
   pointer-events: all;
   transform: translateY(0);
+  z-index: 150;
 }
 .popup.active .popup__wrapper {
   transform: translateY(0);
