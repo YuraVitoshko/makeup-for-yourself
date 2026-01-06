@@ -218,13 +218,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeButton = popup?.querySelector(".popup__close");
   const popupWrapper = popup?.querySelector(".popup__wrapper");
   if (!popup || !openButtons.length || !popupWrapper) return;
+  let bodyLockStatus = true;
+  const lockDelay = 300;
+  const bodyLock = () => {
+    if (!bodyLockStatus) return;
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = `${scrollBarWidth}px`;
+    document.documentElement.setAttribute("data-fls-scrolllock", "");
+    bodyLockStatus = false;
+    setTimeout(() => bodyLockStatus = true, lockDelay);
+  };
+  const bodyUnlock = () => {
+    if (!bodyLockStatus) return;
+    setTimeout(() => {
+      document.body.style.paddingRight = "";
+      document.documentElement.removeAttribute("data-fls-scrolllock");
+    }, lockDelay);
+    bodyLockStatus = false;
+    setTimeout(() => bodyLockStatus = true, lockDelay);
+  };
   const openPopup = () => {
     popup.classList.add("active");
-    document.body.classList.add("popup-open");
+    bodyLock();
   };
   const closePopup = () => {
     popup.classList.remove("active");
-    document.body.classList.remove("popup-open");
+    bodyUnlock();
   };
   openButtons.forEach((btn) => {
     btn.addEventListener("click", openPopup);
