@@ -1539,6 +1539,7 @@ input[type=tel] {
   height: 100%;
   overflow-y: auto;
   padding-top: 2.5rem;
+  display: grid;
 }
 .popup__btn {
   position: relative;
