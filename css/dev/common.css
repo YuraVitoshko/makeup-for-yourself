@@ -408,7 +408,7 @@ body {
 }
 .program__item {
   position: sticky;
-  top: 1.25rem;
+  top: 2.5rem;
   left: 0;
 }
 
@@ -1216,6 +1216,8 @@ input[type=tel] {
   border-radius: 1.25rem;
 }
 .popup__btn {
+  position: relative;
+  z-index: 150;
   justify-self: end;
   padding-right: 2.5rem;
   padding-top: 1.25rem;
