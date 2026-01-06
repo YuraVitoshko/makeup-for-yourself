@@ -27,6 +27,7 @@
     fetch(link.href, fetchOpts);
   }
 })();
+document.documentElement.classList.add("loaded");
 document.addEventListener("DOMContentLoaded", function() {
   const btn = document.querySelector(".page-fixed-btn");
   window.addEventListener("scroll", () => {
