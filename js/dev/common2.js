@@ -219,10 +219,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupWrapper = popup?.querySelector(".popup__wrapper");
   if (!popup || !openButtons.length || !popupWrapper) return;
   let bodyLockStatus = true;
+  let scrollPosition = 0;
   const lockDelay = 300;
   const bodyLock = () => {
     if (!bodyLockStatus) return;
+    scrollPosition = window.scrollY;
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = "100%";
     document.body.style.paddingRight = `${scrollBarWidth}px`;
     document.documentElement.setAttribute("data-fls-scrolllock", "");
     bodyLockStatus = false;
@@ -230,10 +235,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const bodyUnlock = () => {
     if (!bodyLockStatus) return;
-    setTimeout(() => {
-      document.body.style.paddingRight = "";
-      document.documentElement.removeAttribute("data-fls-scrolllock");
-    }, lockDelay);
+    document.documentElement.removeAttribute("data-fls-scrolllock");
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    document.body.style.paddingRight = "";
+    window.scrollTo(0, scrollPosition);
     bodyLockStatus = false;
     setTimeout(() => bodyLockStatus = true, lockDelay);
   };
