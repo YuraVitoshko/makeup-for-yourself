@@ -868,12 +868,12 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-.contacts__container {
+.contacts__container--anim {
   opacity: 0;
   transform: translateY(1.25rem);
   transition: opacity 0.5s, transform 0.5s;
 }
-.contacts__container.--watcher-view {
+.contacts__container--anim.--watcher-view {
   opacity: 1;
   transform: translateY(0);
 }
