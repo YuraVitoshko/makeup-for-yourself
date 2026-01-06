@@ -5,11 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1767709972807"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min2.js?v=1767709972807">
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1767709972807">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1767709972807">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1767709972807">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1767712708877"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min2.js?v=1767712708877">
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1767712708877">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1767712708877">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1767712708877">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -25,7 +25,6 @@
 				</div>
 			</header>
 			<main class="page">
-				<!-- <script type="module" src="@components/layout/popup/popup.js?v=1767709972807"></script> -->
 				<div data-fls-index="" class="index">
 					<main class="page">
 						<button class="page-fixed-btn button btn-popup">
@@ -156,17 +155,16 @@
 								</div>
 							</div>
 							<div data-fls-watcher="" data-fls-watcher-threshold="0.2" data-fls-watcher-once="" class="preview__container">
-								
-								<div class="preview__wrapper-media">
-									<div class="preview__media">
-										<iframe src="https://www.youtube.com/embed/t2vKo62g5ss?si=a7tvSUVFjhvvOzM5" title="YouTube video player"
-										frameborder="0"
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-										referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-									</div>
-								</div>
-
 								<!--
+<div class="preview__wrapper-media">
+<div class="preview__media">
+<iframe src="https://www.youtube.com/embed/t2vKo62g5ss?si=a7tvSUVFjhvvOzM5" title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+-->
 								<div class="preview__video video">
 									<video id="video-player" poster="./assets/img/video-poster.png" class="video__item" controlslist="nodownload" loop playsinline="" preload="metadata">
 										<source src="./assets/video/hero-video.mp4" type="video/mp4">
@@ -186,10 +184,6 @@
 										</button>
 									</div>
 								</div>
-								
-								-->
-						
-							
 							</div>
 						</div>
 						<section class="program">
@@ -737,78 +731,59 @@ fill="white" />
 				</div>
 				<!-- <include src="@components/layout/popup/popup.html" locals='{}'></include> -->
 				<div class="popup">
-					<div class="popup__btn">
-						<button type="button" class="popup__close" aria-label="Закрити попап">
-							<!--
-<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd"
-d="M0.366117 0.366117C0.854272 -0.122039 1.64573 -0.122039 2.13388 0.366117L11.25 9.48223L20.3661 0.366118C20.8543 -0.122038 21.6457 -0.122037 22.1339 0.366118C22.622 0.854273 22.622 1.64573 22.1339 2.13388L13.0178 11.25L22.1339 20.3661C22.622 20.8543 22.622 21.6457 22.1339 22.1339C21.6457 22.622 20.8543 22.622 20.3661 22.1339L11.25 13.0178L2.13388 22.1339C1.64573 22.622 0.854272 22.622 0.366117 22.1339C-0.122039 21.6457 -0.122039 20.8543 0.366117 20.3661L9.48223 11.25L0.366117 2.13388C-0.122039 1.64573 -0.122039 0.854272 0.366117 0.366117Z"
-fill="white" />
-</svg>
--->
-							<img src="./assets/img/icons/close-popup.svg" alt="close">
-						</button>
-					</div>
-					<div class="popup__wrapper">
-						<div class="contacts">
-							<div class="contacts__container">
-								<div class="contacts__body">
-									<h3 class="contacts__title">Приєднуйтесь до Курсу за спеціальною ціною</h3>
-									<div class="contacts__prices prices-contacts">
-										<div class="prices-contacts__new-price">649 грн</div>
-										<div class="prices-contacts__old-price">2190 грн</div>
-									</div>
-									<div class="contacts__text">
-										Одразу після оплати ти отримаєш посилання до Telegram-бота з подальшою
-						інструкцією.
-									</div>
-								</div>
-								<form class="contacts__form form">
-									<div class="form__lines">
-										<div class="form__box">
-											<div class="form__line">
-												<input id="name" type="text" name="name" placeholder="Ім'я" class="form__input input">
-											</div>
-											<span class="form__valid">Обов’язкове поле</span>
+					<div class="popup__box">
+						<div class="popup__btn">
+							<button type="button" class="popup__close" aria-label="Закрити попап">
+								<img src="./assets/img/icons/close-popup.svg" alt="close">
+							</button>
+						</div>
+						<div class="popup__wrapper">
+							<div class="contacts">
+								<div class="contacts__container">
+									<div class="contacts__body">
+										<h3 class="contacts__title">Приєднуйтесь до Курсу за спеціальною ціною</h3>
+										<div class="contacts__prices prices-contacts">
+											<div class="prices-contacts__new-price">649 грн</div>
+											<div class="prices-contacts__old-price">2190 грн</div>
 										</div>
-										<div class="form__box">
-											<div class="form__line">
-												<input id="mail" type="email" name="mail" placeholder="Електронна пошта" class="form__input input">
-											</div>
-											<span class="form__valid">Обов’язкове поле</span>
+										<div class="contacts__text">
+											Одразу після оплати ти отримаєш посилання до Telegram-бота з подальшою
+							інструкцією.
 										</div>
 									</div>
-									<button type="submit" class="form__button button">
-										Перейти ло оплати
-										<span>−79%</span>
-									</button>
-								</form>
-								<div class="contacts__timer timer">
-									<div class="timer__subtitle">До закінчення акції залишилось:</div>
-									<div class="timer__wrapper">
-										<div class="timer__hours"></div>
-										<div class="timer__minutes"></div>
-										<div class="timer__seconds"></div>
+									<form class="contacts__form form">
+										<div class="form__lines">
+											<div class="form__box">
+												<div class="form__line">
+													<input id="name" type="text" name="name" placeholder="Ім'я" class="form__input input">
+												</div>
+												<span class="form__valid">Обов’язкове поле</span>
+											</div>
+											<div class="form__box">
+												<div class="form__line">
+													<input id="mail" type="email" name="mail" placeholder="Електронна пошта" class="form__input input">
+												</div>
+												<span class="form__valid">Обов’язкове поле</span>
+											</div>
+										</div>
+										<button type="submit" class="form__button button">
+											Перейти ло оплати
+											<span>−79%</span>
+										</button>
+									</form>
+									<div class="contacts__timer timer">
+										<div class="timer__subtitle">До закінчення акції залишилось:</div>
+										<div class="timer__wrapper">
+											<div class="timer__hours"></div>
+											<div class="timer__minutes"></div>
+											<div class="timer__seconds"></div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!--
-<div class="popup">
-<div class="popup__btn">
-<button type="button" class="popup__close" aria-label="Закрити попап">
-<img src="@img/icons/close-popup.svg" alt="close">
-</button>
-</div>
-<div class="popup__wrapper">
-<div class="contacts">
-контент ...
-</div>
-</div>
-</div>
--->
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">

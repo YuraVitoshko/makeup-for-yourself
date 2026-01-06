@@ -215,30 +215,27 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.querySelector(".popup");
   const openButtons = document.querySelectorAll(".btn-popup");
-  const closeButton = popup.querySelector(".popup__close");
-  if (!popup || !openButtons.length) return;
+  const closeButton = popup?.querySelector(".popup__close");
+  const popupWrapper = popup?.querySelector(".popup__wrapper");
+  if (!popup || !openButtons.length || !popupWrapper) return;
   const openPopup = () => {
     popup.classList.add("active");
     document.body.classList.add("popup-open");
-    document.body.style.touchAction = "none";
   };
   const closePopup = () => {
     popup.classList.remove("active");
     document.body.classList.remove("popup-open");
-    document.body.style.touchAction = "";
   };
   openButtons.forEach((btn) => {
     btn.addEventListener("click", openPopup);
-    btn.addEventListener("touchend", openPopup);
   });
-  closeButton.addEventListener("click", closePopup);
-  closeButton.addEventListener("touchend", closePopup);
+  closeButton?.addEventListener("click", closePopup);
   popup.addEventListener("click", (e) => {
     if (!e.target.closest(".popup__wrapper")) {
       closePopup();
     }
   });
-  popup.querySelector(".popup__wrapper").addEventListener("click", (e) => {
+  popupWrapper.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 });
