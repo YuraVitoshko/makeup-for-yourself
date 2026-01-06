@@ -116,7 +116,7 @@ body {
 
 .page-fixed-btn {
   position: fixed;
-  z-index: 50;
+  z-index: 40;
   left: 50%;
   transform: translateX(-50%);
   bottom: 1.25rem;
@@ -1506,7 +1506,7 @@ input[type=tel] {
   display: grid;
   background-color: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(0.5rem);
-  z-index: 49;
+  z-index: 150;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1518,10 +1518,10 @@ input[type=tel] {
   position: relative;
   z-index: 150;
   justify-self: end;
-  padding-right: 2.5rem;
+  padding-right: 1.5625rem;
   padding-top: 1.25rem;
   align-self: end;
-  margin-bottom: -2.1875rem;
+  margin-bottom: -2rem;
 }
 .popup.active {
   opacity: 1;
@@ -1539,7 +1539,6 @@ input[type=tel] {
   width: 100%;
   border-radius: 1.25rem;
   position: relative;
-  padding: 0 1.25rem;
   z-index: 50;
   transform: translateY(1.875rem);
   opacity: 0;
